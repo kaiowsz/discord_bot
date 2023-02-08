@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const dotenv = require("dotenv")
 const { REST } = require("@discordjs/rest")
-const { Routes } = require("@discord-api-types/v9")
+const { Routes } = require("discord-api-types/v9")
 const fs = require("fs")
 const { Player } = require("discord-player")
 const { Client, GatewayIntentBits } = require("discord.js")
@@ -12,7 +12,7 @@ const TOKEN = process.env.TOKEN
 const LOAD_SLASH = process.argv[2] == "load"
 
 const CLIENT_ID = "1072614765970604092"
-const GUILD_ID = "641734678763798578"
+const GUILD_ID = "674758318182498324"
 
 const client = new Discord.Client({
     intents: [
@@ -41,7 +41,10 @@ for(const file of slashFiles) {
 }
 
 if (LOAD_SLASH) {
-    const rest = new REST({ version: "9"}).setToken(TOKEN)
+    const rest = new REST({ version: "9" }).setToken("MTA3MjYxNDc2NTk3MDYwNDA5Mg.GfT_xc.ODPrVQpUYB3ImQ5iWEx_zVig7GcayZDSTx6TfI")
+
+
+
     console.log("Deploying slash commands")
     rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {body: commands})
     .then(() => {
@@ -49,7 +52,7 @@ if (LOAD_SLASH) {
         process.exit(0)
     })
     .catch((err) => {
-        if(err) {
+        if (err){
             console.log(err)
             process.exit(1)
         }
