@@ -41,7 +41,7 @@ for(const file of slashFiles) {
 }
 
 if (LOAD_SLASH) {
-    const rest = new REST({ version: "9" }).setToken("MTA3MjYxNDc2NTk3MDYwNDA5Mg.GfT_xc.ODPrVQpUYB3ImQ5iWEx_zVig7GcayZDSTx6TfI")
+    const rest = new REST({ version: "9" }).setToken(TOKEN)
 
 
 
